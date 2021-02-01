@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+*{
+  -webkit-user-select: none;
+  -moz-user-select: none;grid-area: 
+  -khtml-user-select:none;
+  -ms-user-select:none; 
+   overscroll-behavior: contain;
+}
+html{
+  background-color: #3A3C43;
+}
+button{
+  text-align: center;
+  color:#CACAD1;
+  font-size: 30px;
+  margin:auto 20px;
+  padding: 10px 0 ;
+  background-color: #212137;
+  border-radius: 15px;
+  border: solid 2px #39395f;
+  width:15%;
+}
+button:active{
+  background-color: #39395f;
+  cursor: pointer;
+  box-shadow: 0 0 10px #bfc0e9;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+h1{
+  font-size: 50px;
+  padding-top:50px;
+  text-align: center;
+  color: #bfc0e9;
+}
+
+#scoreWrap{
+  padding: 5% 10% 0 10%;
+}
+#scoreBoard {
+  display: flex;
+}
+#player1{
+  height: 100%;
+  width:500px;
+  background-color: #212137;
+  border-radius: 15px;
+  border-bottom: solid 2px #39395f;
+  box-shadow: 0 0 10px #bfc0e9;
+}
+#vs{
+ text-align: center;
+ width:100px;
+ margin: 10px 30px 0 30px;
+}
+.fa.fa-exchange,#vsvs{
+	font-size: 80px;
+}
+.fa.fa-exchange{
+  color: #6ECDF9;
+  text-shadow: 0 0 5px #E9BFCD;
+}
+.fa.fa-exchange:active{
+  color: #6666D5;
+  cursor: pointer;
+  text-shadow: 0 0 5px #E9BFCD;
+}
+#tscr1,#tscr2{
+ margin:10px 10px 0 10px; 
+ padding:5px 10px;
+ border-radius: 50%;
+ border: solid 1px #39395f;
+ background-color:#FFC000;
+ color:#A80D0D;
+ width:100px;
+ font-size: 60px;
+ font-weight: bold;
+ text-align: center;
+ box-shadow: 0 0 5px #E9BFCD;
+}
+#tscr1{
+  float: right;
+}
+#player2{
+  height: 100%;
+  width:500px;
+  background-color: #212137;
+  border-radius: 15px;
+  border: solid 2px #39395f;
+  box-shadow: 0 0 10px #bfc0e9;
+}
+#name1,#name2{
+  font-size: 80px;
+  background: none;
+  border-style: none;
+  color: white;
+  width: 100%;
+  padding:0 30px ;
+  text-shadow: 0 0 5px #E9BFCD;
+}
+#name2{
+ text-align: right;
+}
+.scoreblock {
+  background-color: rgba(0,0,0,0);
+  color: white;
+  font-size: 50px;
+  margin:10px;
+  text-align: center;
+  position: relative;
+  display: inline;
+  border:none;
+}
+.scoreblock.minus{
+  float: left;
+  text-align: left;
+  color: #4f81bd;
+}
+.scoreblock.plus{
+  float: right;
+  text-align: right;
+  color: #4f81bd;
+}
+.minus:active,
+.plus:active{
+ cursor: pointer;
+ color:#BFDCFF;
+ text-shadow: 0 0 1px #FDFCFC;
+}
+
+#scoreBoard2 {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+#scr1{
+  width:500px;
+  background-color: #212137;
+  border-radius: 15px;
+  border-bottom: solid 2px #39395f;
+  height:360px;
+  box-shadow: 0 0 10px #bfc0e9;
+}
+#scr2{
+  width:500px;
+  background-color: #212137;
+  border-radius: 15px;
+  border-bottom: solid 2px #39395f;
+  height:360px;
+  box-shadow: 0 0 10px #bfc0e9;
+}
+
+.scoreblock2 {
+  background-color: rgba(0,0,0,0);
+  color: white;
+  text-align: center;
+  position: relative;
+  font-size: 80px;
+  display: inline;
+  list-style: none;
+  border:none;
+}
+
+.scoreblock2.plus,.scoreblock2.minus{
+ margin:0 10px;
+ color: #4f81bd;
+}
+.plus:active,
+.minus:active{
+ cursor: pointer;
+ color:#C5DFFE;
+}
+.scoreblock2.plus{
+  float: right;
+  text-align: right;
+}
+#bscr1,#bscr2{
+  font-size: 230px;
+  width:100%;
+  text-shadow: 0 0 10px #E9BFCD;
+}
+#linetop{
+  width:90%;
+  height:5px;
+  background-color: #212137;
+  margin:50px auto;
+  border-radius: 15px;
+  border: solid 2px #39395f;
+}
+#buttons{
+ text-align: center;
+}
+@import "https://fonts.googleapis.com/css?family=Raleway";
+
+
+#countBtn:active { background: #444; }
+
+#countdown { 
+  display: none;
+  border: 6px solid #FFC000; 
+  padding: 2em;
+  height: 680px;
+  text-align: center;
+  background: #212137;
+  position: fixed;
+  width: 94%;
+   top:0px;
+   left:0;
+   left:0;
+   bottom:0;
+  z-index:1000;
+  position:absolute;
+}
+
+#playpause,#reset{
+   display: inline-block;
+  margin: 0 5px 0;
+  border-radius: 50px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: center;
+  text-decoration: none;
+  color: #FFF;
+  background-color: #3F51B5;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width:15%;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin:40px 20px 40px 20px;
+  font-size: 50px;
+}
+#playpause{
+  font-size: 30px;
+}
+#reset{
+     line-height: 1.2;
+}
+#time{
+  color:#F1614B;
+    font-size: 200px;
+    font-weight: 1000;
+    margin:60px 0 20px 0;
+}
+#minutes {
+  color:white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+     font-size: 50px;
+    font-style: normal;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+input[type=number]::-webkit-inner-spin-button{
+  width: 30px;
+     height: 60px;
+}
+input[type="number"] {
+   font-size: 50px;
+width:100px;
+border:gray 1px solid;
+line-height: 27px;
+}
+
+.cd-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+}
+.btn.btn-info{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px;
+  height: 80px;
+  background: none;
+}
+.btn-info:active{
+  text-shadow: 0 0 10px #bfc0e9;
+  box-shadow:none;
+}
+.cd-close-button {
+  color:white;
+  border-bottom: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.cd-close-button:active{
+  text-shadow: 0 0 10px #bfc0e9;
+  box-shadow:none;
+}
+.cd-popup-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 8px;
+}
+
+.cd-popup-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 8px;
+}
+.disable {
+  opacity: 0.0;
+}
+// Disable scrolling on child elements
+.disable div,
+.disable textarea {
+  overflow: hidden;
+}

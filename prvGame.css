@@ -1,0 +1,93 @@
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+html{
+    background-color: #424245;
+}
+button{
+    /*border: 5px #385d8a solid ;*/
+    color:white;
+    margin:30px 60px;
+    padding: 10px 0 ;
+    background-color: #212137;
+    width:20%;
+}
+button:hover{
+  background-color: #39395f;
+  cursor: pointer;
+  box-shadow: 0 0 10px #bfc0e9;
+  border: solid 5px #39395f;
+}
+
+.totalWrap{
+    dispaly:absolute;
+    text-align: center;
+}
+#videos{
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   z-index: -1000;
+   width:95%;
+   height:85%;
+   display: fixed;
+   object-fit: fill;
+   box-shadow: 0 0 10px #bfc0e9;
+}
+video:focus { outline:none; }
+input:focus { outline:none; }
+
+.players{margin: 0;
+    width:100%;
+    text-align: center;
+}
+.span{
+ vertical-align: middle;
+ border: solid 3px #212137;
+ border-radius: 15px;
+ font-size: 35px;
+ margin:40px 15px 0 15px;
+ padding: 5px 0 ;
+ width:25%;
+ text-align: center;
+
+}
+.span.player1,.span.player2{
+    box-shadow: 0 0 10px #bfc0e9;
+}
+#prvBtn{
+    text-align: center;
+ border:none;
+ border-radius: 15px;
+  padding: 5px ;
+    background-color: #372126;
+  color: white;
+  font-size: 20px;
+  font-weight: 1000;
+  text-decoration: none;
+  transition: all 0.2s;
+  position:absolute;
+  width:170px;
+  left:3%;
+}
+.btn.btn-info{
+  /*position: absolute;*/
+  padding:5px 10px;
+  width: 99%;
+  height: 40px;
+  background: none;
+  border:none;
+  text-align: right;
+  color:white;
+  font-size: 30px;
+}
+.btn-info:active{
+  text-shadow: 0 0 10px #bfc0e9;
+  box-shadow:none;
+}
+#fileSelector {
+  display: block;
+  width: 33em;
+}
