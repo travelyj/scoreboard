@@ -1,7 +1,6 @@
 <?php
 echo '<link rel="stylesheet" href="../js/icofont/icofont.min.css">';
 echo '<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css">';
-// include_once('score.php');
 ?>
 <?php
 $sunname1 = $_GET['sunname1'];
@@ -15,22 +14,21 @@ $result= sqlsrv_query($dbconn,$sql);
 $rows=sqlsrv_num_rows($result);
 
 while ($row=sqlsrv_fetch_array($result)){
-$name1 = $row['sunname1'];
-$name2 =  $row['sunname2'];
-$score1 = $row['score1'];
-$score2 = $row['score2'];
-$sim = $row['sim01'];
+  $name1 = $row['sunname1'];
+  $name2 =  $row['sunname2'];
+  $score1 = $row['score1'];
+  $score2 = $row['score2'];
+  $sim = $row['sim01'];
 }
 
 sqlsrv_close($dbconn);
- ?>
+?>
 <link rel="stylesheet" href="scoreboard.css?v=4">
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <form id="scoreForm" name="scoreForm" action="update.php"  method="post" enctype="multipart/form-data" autocomplete="off" >
-  <!-- <div id="scoreTime"></?=date("Y-m-d ")?></div> -->
-<span id="error" style="display:none; color:#F00">Some Error!Please Fill form Properly </span> <span id="success" style="display:none; color:#0C0">All the records are submitted!</span>
+  <span id="error" style="display:none; color:#F00">Some Error!Please Fill form Properly </span> <span id="success" style="display:none; color:#0C0">All the records are submitted!</span>
   <div id="scoreWrap">
     <button type="button" id="fullscreen-button" class="btn btn-info"><i class="fa fa-expand"></i></button>
 
@@ -39,7 +37,6 @@ sqlsrv_close($dbconn);
       <input name="winner" id="winner" value="" hidden>
       <div id="player1">
         <input name="tscr1"  id="tscr1"  value="<?php echo $score1?$score1:0 ?>"  readonly >
-        <!-- <input type="hidden" name="original" id="original" value="<?php echo $player1 ;?>"> -->
         <input id="name1" name="name1" value="<?php echo $name1?$name1:$sunname1 ;?>" readonly>
         <span class="scoreblock minus" onclick="minusOne(score1)"><i class="icofont-minus-square"></i></span>
         <span class="scoreblock plus" onclick="addOne(score1)"><i class="icofont-plus-square"></i></span>
@@ -58,8 +55,6 @@ sqlsrv_close($dbconn);
        <span class="scoreblock plus" onclick="addOne(score2)"><i class="icofont-plus-square"></i></span>
      </div>
    </div>
-
-
 
 
    <div id="scoreBoard2">
@@ -144,58 +139,4 @@ sqlsrv_close($dbconn);
     }
   };
 
-  
-//   function submitForm(url){
-//     var data = $("$scoreForm").serialize();
-//     $.ajax({
-//         type : 'POST',
-//         url  : url,
-//         data : data,
-//         success : function(data){
-//                 console.log(data);
-//                 $("#success").show().fadeOut(5000);
-//             },
-//             error:function(data){
-//                 $("#error").show().fadeOut(5000);
-//             }
-//     });
-// }
-
-// $(document).ready(function(){
-//     $('#scoreForm').submit(function(){
-//         $.ajax({
-//             url : 'insert_update.php',
-//             data : $(this).serialize(),
-//             type : 'POST',
-//             success : function(data){
-//                 console.log(data);
-//                 $("#success").show().fadeOut(5000);
-//             },
-//             error:function(data){
-//                 $("#error").show().fadeOut(5000);
-//             }
-//         });
-//         // !important for ajax form submit
-//         return false;
-//     });
-// });
 </script>
-<!--  <script>
-  $(document).ready(function() {
-
-    $("#matchlist").submit(function() { // intercepts the submit event
-      $.ajax({ // make an AJAX request
-        type: "POST",
-        url: "delete.php", // it's the URL of your component B
-        data: $("#matchlist").serialize(), // serializes the form's elements
-        success: function(data)
-        {
-          // show the data you got from B in result div
-          $("#result").html(data);
-        }
-      });
-      e.preventDefault(); // avoid to execute the actual submit of the form
-    });
-
-  });
-  </script> -->

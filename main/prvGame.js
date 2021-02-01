@@ -68,7 +68,6 @@ window.onload = function() {
 
 
   function init() {
-  // Loop through the video names one by one
     // Open transaction, get object store, and get() each video by name
     let objectStore = db.transaction(['videos_os'],'readonly').objectStore('videos_os');
 
@@ -131,8 +130,7 @@ window.onload = function() {
     console.log(request.error);
   }
 };
-
-//비디오 파일 loop 
+//비디오재생
 function displayVideo(mp4Blob) {
     videoSrc = [];
      video = document.getElementById('videos');
@@ -147,6 +145,7 @@ function displayVideo(mp4Blob) {
      video.src = videoSrc[video_index];
      video.play();  
    } 
+//비디오 파일 loop 
    function onVideoEnded(){
      video_index++;
      if(video_index > videoCount-1) video_index = 0;
@@ -183,11 +182,8 @@ function displayVideo(mp4Blob) {
 
     // Create an objectStore to store our videos in (basically like a single table)
     // including a auto-incrementing key
-    // let objectStore = db.createObjectStore('videos_os');
     let objectStore = db.createObjectStore('videos_os', { autoIncrement : true });
 
-    // Define what data items the objectStore will contain
-    // objectStore.createIndex('mp4', 'mp4', { unique: true });
 
     console.log('Database setup complete');
   };
