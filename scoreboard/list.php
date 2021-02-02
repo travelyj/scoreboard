@@ -7,7 +7,7 @@ if(isset($_GET["page"])){
 }else{
   $page = 1;
 };
-$sql = "SELECT matchidx,sunname1,sunname2,sim01,gameresult,score1,score2,CONVERT(VARCHAR(30), gdate, 100) as gdate FROM scoreboard ORDER BY matchidx desc ";
+$sql = "SELECT matchidx,sunname1,sunname2,sim01,gameresult,score1,score2,CONVERT(VARCHAR(30), gdate, 100) AS gdate FROM scoreboard ORDER BY matchidx DESC ";
   $result = sqlsrv_query($dbconn,$sql,array(), array( "Scrollable" => 'static' ));
 $total_record = sqlsrv_num_rows($result);
 $list = 5;
