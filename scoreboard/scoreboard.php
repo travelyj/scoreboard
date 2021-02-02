@@ -1,13 +1,13 @@
 <?php
-echo '<link rel="stylesheet" href="../js/icofont/icofont.min.css">';
-echo '<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css">';
+echo '<link rel="stylesheet" href="/js/icofont/icofont.min.css">';
+echo '<link rel="stylesheet" href="/js/font-awesome/css/font-awesome.min.css">';
 ?>
 <?php
 $sunname1 = $_GET['sunname1'];
 $sunname2 = $_GET['sunname2'];
 
 
-include_once('../lib/mssql.lib.php');
+include_once('/lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 $sql = "select * from scoreboard where  (sunname1 = '$sunname1' AND sunname2 ='$sunname2') OR (sunname1 = '$sunname2' AND sunname2 ='$sunname1')";
 $result= sqlsrv_query($dbconn,$sql);
@@ -84,7 +84,6 @@ sqlsrv_close($dbconn);
 <div id="buttons">
   <button type="button" id="countBtn">타이머</button>
   <button type="button" onclick="clearScores();">게임 RESET</button>
-  <!-- <input type="submit" name="update" id="update" onclick="saveWinner();" value="update"></input> -->
   <button type="submit" name="save" id="save" onclick="saveWinner();" value="save"> 경기저장</button>
   <button type="button" onclick="exit();">종료</button>
   <button type="button"><a href="list.php" target="_blank">리스트</a></button>

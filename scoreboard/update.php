@@ -1,5 +1,5 @@
 <?php
-include_once('../lib/mssql.lib.php');
+include_once('/lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 
 $sunname1 = $_POST['name1'];
@@ -24,7 +24,7 @@ if($result == 1){
   exit();
 
 }else if($result == 0){
-  header("Location:prvGame.php");
+  header("Location:../main/prvGame.php");
   exit;
 }else (
 "hmmmmmmmm");
