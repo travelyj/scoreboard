@@ -70,7 +70,7 @@ localStorage.setItem('name1', name2form.value);
 
 //종료
 function exit(){
-     location.href = "prvGame.php";
+     location.href = "../main/prvGame.php";
 }
 
 

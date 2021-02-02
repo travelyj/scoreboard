@@ -1,5 +1,5 @@
 <?php
-include_once('../lib/mssql.lib.php');
+include_once('/lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 
 if(isset($_GET["page"])){
@@ -58,7 +58,7 @@ $result2 = sqlsrv_query($dbconn,$sql2);
 while ($row= sqlsrv_fetch_array($result2)){
 ?>
     <tr >
-        <td class= "clickable" data-href="read.php?matchidx=<?php echo $row['matchidx'] ?>"><?php echo $row['matchidx'] ?></td>
+        <td class= "clickable" data-href=""><?php echo $row['matchidx'] ?></td>
         <td><?php echo $row['sunname1'] ?></td>
         <td><?php echo $row['score1']?></td>
         <td><?php echo $row['sunname2']?></td>
@@ -94,7 +94,7 @@ while ($row= sqlsrv_fetch_array($result2)){
 
    </div>
 <a href="scoreboard.php">이전게임</a>
-<a href="prvGame.php">메인</a>
+<a href="../main/prvGame.php">메인</a>
 <button  type="submit">선택삭제</button>
    </form>
    
@@ -122,22 +122,3 @@ function toggle(source) {
    }
  }
 </script>
-<!--  <script>
-  $(document).ready(function() {
-
-    $("#matchlist").submit(function() { // intercepts the submit event
-      $.ajax({ // make an AJAX request
-        type: "POST",
-        url: "delete.php", // it's the URL of your component B
-        data: $("#matchlist").serialize(), // serializes the form's elements
-        success: function(data)
-        {
-          // show the data you got from B in result div
-          $("#result").html(data);
-        }
-      });
-      e.preventDefault(); // avoid to execute the actual submit of the form
-    });
-
-  });
-  </script> -->

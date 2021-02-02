@@ -2,7 +2,7 @@
 if ( !isset($_POST["chkDel"]) || !is_array($_POST["chkDel"]) ) {
     die('missing or wrong parameter "chkDel"');
 }
-include_once('../lib/mssql.lib.php');
+include_once('/lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 
 $query = 'DELETE FROM scoreboard WHERE matchidx = ?';
