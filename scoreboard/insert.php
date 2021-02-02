@@ -3,7 +3,7 @@
 $sunname1 = $_POST['sunname1'];
 $sunname2 = $_POST['sunname2'];
 $sim1 = $_POST['simpan'];
-include_once('/lib/mssql.lib.php');
+include_once('../../lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 
 //    QUERY

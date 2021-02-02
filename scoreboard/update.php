@@ -1,5 +1,5 @@
 <?php
-include_once('/lib/mssql.lib.php');
+include_once('../../lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 
 $sunname1 = $_POST['name1'];

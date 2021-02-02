@@ -7,7 +7,7 @@ $sunname1 = $_GET['sunname1'];
 $sunname2 = $_GET['sunname2'];
 
 
-include_once('/lib/mssql.lib.php');
+include_once('../../lib/mssql.lib.php');
 $dbconn = sqlserverConnection();
 $sql = "select * from scoreboard where  (sunname1 = '$sunname1' AND sunname2 ='$sunname2') OR (sunname1 = '$sunname2' AND sunname2 ='$sunname1')";
 $result= sqlsrv_query($dbconn,$sql);
